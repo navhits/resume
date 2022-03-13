@@ -1,3 +1,4 @@
+from http import cookies
 import os
 from base64 import b64decode
 import requests
@@ -47,10 +48,13 @@ if __name__ == '__main__':
         'accept': 'application/json',
     }
 
+    cookies = {
+        'source' : os.getenv('SOURCE')
+    }
 
     files={'file': (file_name, open(file_name,'rb'), 'application/pdf')}
     
     res = requests.post("https://api.navs.page/drive/upload", headers=headers,
-                files=files)
+                files=files, cookies=cookies)
 
     print(res.json())
