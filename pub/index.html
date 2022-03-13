@@ -6,569 +6,88 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Naveen's Resume</title>
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <meta charset="utf-8">
+    <meta property="og:title" content="Naveen's Resume">
+    <meta name="description"
+        content="Naveen is a developer by heart and infosec by passion. Security Engineer @ Freshworks and volunteers for GDG and WTM Chennai.">
+    <meta property="og:description"
+        content="Naveen is a developer by heart and infosec by passion. Security Engineer @ Freshworks and volunteers for GDG and WTM Chennai.">
+    <meta property="og:url" content="https://navs.page">
+    <meta property="og:locale" content="en">
+
+    <link rel="preconnect" href="//ajax.googleapis.com" crossorigin="">
+    <link rel="preconnect" href="//stackpath.bootstrapcdn.com" crossorigin="">
+    <link rel="preconnect" href="//maxcdn.bootstrapcdn.com" crossorigin="">
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="">
+    <script async src="//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link href="//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="//navs.page/themes/neodyn/css/master/neodyn.css" rel='stylesheet' type='text/css' />
+    <link href="//navs.page/static/styles/grid.css" rel='stylesheet' type='text/css' />
+    <link href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Material+Icons" rel="stylesheet">
 </head>
 
 <body>
-    <div class="a4" id="printArea">
-        <div class="page-print" id="noPrint">
-            <ul class="nav-list">
-                <li class="nav-list-item"><a href="//navs.page">Web</a></li>
-                <li class="nav-list-item"><a href="//naveen-s.medium.com">Blog</a></li>
-                <li class="nav-list-item"><a href="//api.navs.page/docs">API</a></li>
-                <li class="nav-list-item"><a href="//github.com/navhits">Work</a></li>
-            </ul>
-            <p class="note">Note: This page works only on desktop as intented. Please visit my <a
-                    class="hyperlinks" href="//navs.page">website</a> if you have trouble using this page.</p>
-            <input class="btn animate" type="button" onclick="generatePDF()" value="Get a copy of this resume" />
-        </div>
+    <section class="main-section">
+        <div id="banner" class="banner"></div>
+        <button style="z-index:9; position: absolute; right:10px; top: 10px" id="mode-toggler" class="btn">Lights off
+            🌝</button>
         <div class="container">
-            <section class="header-section">
-                <div class="header-section-left">
-                    <div class="name-title">
-                        Naveen S
-                    </div>
-                    <div class="name-subtitle">
-                        Developer from heart, Infosec by passion.
-                    </div>
-                    <div class="about">
-                        An energetic technology enthusiast who is a developer from heart and passionate about
-                        Information Security. Interesting
-                        and challenging problems never fails to excite me. I believe in usability and accessability of
-                        security and privacy for
-                        everyone through the technology they use.
-                    </div>
+            <div class="ban-head">
+                <img class="my-profile-pic" src="//navs.page/static/images/profile.png"
+                    onerror="this.onerror=null;this.src='https:\/\/navs.page/static/images/profile-fallback.jpeg';" width="200px"
+                    alt="Profile picture of Naveen">
+            </div>
 
-                </div>
-                <div class="header-section-center">
-                </div>
-                <div class="header-section-right">
-                    <div class="contact">
-                        <div class="contact-item">
-                            <div class="contact-item-text">
-                                <a class="hyperlinks" href="mailto: reachme@navs.page">reachme@navs.page</a>
-                            </div>
-                            <div class="contact-item-icon">
-                                <i class="fa fa-envelope" aria-hidden="true"></i>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-item-text">
-                                <a class="hyperlinks" href="tel: +917358477106">+91 7358 477 106</a>
-                            </div>
-                            <div class="contact-item-icon">
-                                <i class="fa fa-phone" aria-hidden="true"></i>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-item-text">
-                                <a>Chennai, India</a>
-                            </div>
-                            <div class="contact-item-icon">
-                                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-item-text">
-                                <a>August 2, 1998</a>
-                            </div>
-                            <div class="contact-item-icon">
-                                <i class="fa fa-calendar" aria-hidden="true"></i>
-                            </div>
-                        </div>
+            <div class="quick-links">
+                <div class="quick-link-grid">
+                    <div class="quick-link-grid-item">
+                        <a href="#">
+                            <h5 class="project-title">Get a copy of my resume</h5>
+                        </a>
                     </div>
-                    <div class="social">
-                        <div class="social-item">
-                            <div class="social-item-icon">
-                                <i class="fa fa-globe" aria-hidden="true"></i>
-                            </div>
-                            <div class="social-item-text">
-                                <a class="hyperlinks" href="//navs.page">https://navs.page</a>
-                            </div>
-                        </div>
-                        <div class="social-item">
-                            <div class="social-item-icon">
-                                <i class="fa fa-twitter" aria-hidden="true"></i>
-                            </div>
-                            <div class="social-item-text">
-                                <a class="hyperlinks" href="//twitter.com/nav_s15">@navs_s15</a>
-                            </div>
-                        </div>
-                        <div class="social-item">
-                            <div class="social-item-icon">
-                                <i class="fa fa-github" aria-hidden="true"></i>
-                            </div>
-                            <div class="social-item-text">
-                                <a class="hyperlinks" href="//github.com/navhits">@navhits</a>
-                            </div>
-                        </div>
-                        <div class="social-item">
-                            <div class="social-item-icon">
-                                <i class="fa fa-linkedin" aria-hidden="true"></i>
-                            </div>
-                            <div class="social-item-text">
-                                <a class="hyperlinks" href="//linkedin.com/in/naveen-s">in/naveen-s</a>
-                            </div>
-                        </div>
-                        <div class="social-item">
-                            <div class="social-item-icon">
-                                <i class="fa fa-medium" aria-hidden="true"></i>
-                            </div>
-                            <div class="social-item-text">
-                                <a class="hyperlinks" href="//naveen-s.medium.com">@naveen-s</a>
-                            </div>
-                        </div>
+                    <div class="quick-link-grid-item">
+                        <a href="resume.html" rel="noopener noreferrer" target="_blank">
+                            <h5 class="project-title">View my resume <i class="fa fa-external-link"></i></h5>
+                        </a>
                     </div>
                 </div>
-            </section>
-            <section class="body-section">
-                <div class="body-section-left">
-                    <div class="work">
-                        <div class="work-title">
-                            Work
-                        </div>
-                        <div class="work-items">
-                            <div class="work-card">
-                                <div class="work-card-row-split">
-                                    <div class="work-card-role">
-                                        <a>Security Engineer <span class="title-banner">Full time</span></a>
-                                    </div>
-                                    <div class="work-card-location">
-                                        <a>Chennai, India</a>
-                                    </div>
-                                    <div class="work-card-org">
-                                        <a>Freshworks</a>
-                                    </div>
-                                    <div class="work-card-timeline">
-                                        <a>Jan 2020 - Present</a>
-                                    </div>
-                                </div>
-                                <div class="work-card-row">
-                                    <ul>
-                                        <li>
-                                            Working on a security issue tracker on top of our project management tool
-                                        </li>
-                                        <li>
-                                            Building an internal threat intelligence framework
-                                        </li>
-                                        <li>
-                                            Working on SAST and other DevSecOps activities
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="work-card-history">
-                                    <div class="past-roles">
-                                        <a>Previous Roles</a>
-                                    </div>
-                                    <div class="past-role-titles">
-                                        <ul class="ul-remove-padding-margin">
-                                            <li>
-                                                Security Engineer - Graduate Trainee
-                                            </li>
-                                            <li>
-                                                Information Security Intern
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="spacer-sub-margin"></div>
-
-                            <div class="work-card">
-                                <div class="work-card-row-split">
-                                    <div class="work-card-role">
-                                        <a>Application Developer <span class="title-banner">Freelance</span></a>
-                                    </div>
-                                    <div class="work-card-location">
-                                        <a>Chennai, India</a>
-                                    </div>
-                                    <div class="work-card-org">
-                                        <a>T5 Developers</a>
-                                    </div>
-                                    <div class="work-card-timeline">
-                                        <a>May 2019 - Dec 2019</a>
-                                    </div>
-                                </div>
-                                <div class="work-card-row">
-                                    <ul>
-                                        <li>
-                                            Worked on setting up the new startup and worked on initial projects
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="spacer-sub-margin"></div>
-
-                            <div class="work-card">
-                                <div class="work-card-row-split">
-                                    <div class="work-card-role">
-                                        <a>Cyber Security trainer <span class="title-banner">Freelance</span></a>
-                                    </div>
-                                    <div class="work-card-location">
-                                        <a>Chennai, India</a>
-                                    </div>
-                                    <div class="work-card-org">
-                                        <a>QS Techno Solutions</a>
-                                    </div>
-                                    <div class="work-card-timeline">
-                                        <a>Jan 2019 - Mar 2019</a>
-                                    </div>
-                                </div>
-                                <div class="work-card-row">
-                                    <ul>
-                                        <li>
-                                            Trained over 23 students on Open Source, Linux, Cyber Security, Ethics of
-                                            hacking, Cyber laws
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="spacer-margin"></div>
-
-                    <div class="education">
-                        <div class="education-title">
-                            Education
-                        </div>
-                        <div class="education-items">
-                            <div class="education-card">
-                                <div class="education-card-row-split">
-                                    <div class="education-card-role">
-                                        <a>B.Tech IT Cyber Security</a>
-                                    </div>
-                                    <div class="education-card-timeline">
-                                        <a>Jul 2016 - Jul 2020</a>
-                                    </div>
-                                </div>
-                                <div class="education-card-row-org">
-                                    <div class="education-card-org">
-                                        <a>Hindustan Institute of Technology & Science <span
-                                                class="title-banner">Chennai, India</span></a>
-                                    </div>
-                                </div>
-                                <div class="education-card-row">
-                                    <ul>
-                                        <li>
-                                            Bachelor's degree with specialization in Cyber Security
-                                        </li>
-                                        <li>
-                                            Selected as Google Developer Student Clubs Lead for 2019
-                                        </li>
-                                        <li>
-                                            Co-founded and hosted Kruptos Security Club as President between 2017 and
-                                            2020
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="spacer-sub-margin"></div>
-
-                            <div class="education-card">
-                                <div class="education-card-row-split">
-                                    <div class="education-card-role">
-                                        <a>Data Mining & BI in Cyber Security</a>
-                                    </div>
-                                    <div class="education-card-timeline">
-                                        <a>Jul 2019 - Aug 2019</a>
-                                    </div>
-                                </div>
-                                <div class="education-card-row-org">
-                                    <div class="education-card-org">
-                                        <a>Ben Gurion University of the Negev <span class="title-banner">Be'er Sheva,
-                                                Israel</span></a>
-                                    </div>
-                                </div>
-                                <div class="education-card-row">
-                                    <ul>
-                                        <li>
-                                            Summer research program that involves learning about the most advanced
-                                            methods of handling Cyber Security problems
-                                        </li>
-                                        <li>
-                                            The program included labs on these topics along with industrial visits and a
-                                            final project
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="spacer-sub-margin"></div>
-
-                            <div class="education-card">
-                                <div class="education-card-row-split">
-                                    <div class="education-card-role">
-                                        <a>HSC + SSLC (10+2)</a>
-                                    </div>
-                                    <div class="education-card-timeline">
-                                        <a>Jun 2004 - Jun 2016</a>
-                                    </div>
-                                </div>
-                                <div class="education-card-row-org">
-                                    <div class="education-card-org">
-                                        <a>Montfort Matriculation Higher Secondary School <span
-                                                class="title-banner">Chennai, India</span></a>
-                                    </div>
-                                </div>
-                                <div class="education-card-row">
-                                    <ul>
-                                        <li>
-                                            Summer research program that involves learning about the most advanced
-                                            methods of handling Cyber
-                                            Security problems
-                                        </li>
-                                        <li>
-                                            The program included labs on these topics along with industrial visits and a
-                                            final project
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="spacer-sub-margin"></div>
-
-                    <div class="volunteer">
-                        <div class="volunteer-title">
-                            Volunteer
-                        </div>
-                        <div class="volunteer-items">
-                            <div class="volunteer-card">
-                                <div class="volunteer-card-row-split">
-                                    <div class="volunteer-card-role">
-                                        <a>Volunteer Organizer</a>
-                                    </div>
-                                    <div class="volunteer-card-timeline">
-                                        <a>Sep 2019 - Present</a>
-                                    </div>
-                                </div>
-                                <div class="volunteer-card-row-org">
-                                    <div class="volunteer-card-org">
-                                        <a>Google Developer Groups Chennai</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="spacer-sub-margin"></div>
-
-                            <div class="volunteer-card">
-                                <div class="volunteer-card-row-split">
-                                    <div class="volunteer-card-role">
-                                        <a>Lead</a>
-                                    </div>
-                                    <div class="volunteer-card-timeline">
-                                        <a>Jan 2019 - Jul 2020</a>
-                                    </div>
-                                </div>
-                                <div class="volunteer-card-row-org">
-                                    <div class="volunteer-card-org">
-                                        <a>Google Developer Student Clubs</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="spacer-sub-margin"></div>
-
-                            <div class="volunteer-card">
-                                <div class="volunteer-card-row-split">
-                                    <div class="volunteer-card-role">
-                                        <a>Founder & President</a>
-                                    </div>
-                                    <div class="volunteer-card-timeline">
-                                        <a>Oct 2017 - Oct 2019</a>
-                                    </div>
-                                </div>
-                                <div class="volunteer-card-row-org">
-                                    <div class="volunteer-card-org">
-                                        <a>Kruptos Security Club</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="body-section-center"></div>
-
-                <div class="body-section-right">
-                    <div class="projects">
-                        <div class="project-title">
-                            Projects
-                        </div>
-                        <div class="project-items">
-                            <div class="project-card">
-                                <div class="project-card-row">
-                                    <div class="project-card-name">
-                                        <a>Deep Learning for Threat Actor Attribution from Threat Reports <span
-                                                class="title-banner">Published</span> <br /><span
-                                                class="title-banner-grey">DOI
-                                                10.1109/ICCCSP49186.2020.9315219</span></a>
-                                    </div>
-                                </div>
-                                <div class="project-card-row">
-                                    <ul>
-                                        <li>
-                                            A multi-class threat attribution neural network based on threat intelligence
-                                            reports
-                                        </li>
-                                        <li>
-                                            Uses SimVeR embeddings for text classification
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="spacer-sub-margin"></div>
-
-                            <div class="project-card">
-                                <div class="project-card-row">
-                                    <div class="project-card-name">
-                                        <a>Hexagon Structured Optic Mirror Pipe for Street Lights <span
-                                                class="title-banner">Patent Applied</span>
-                                            <span class="title-banner-grey">201841015766</span></a>
-                                    </div>
-                                </div>
-                                <div class="project-card-row">
-                                    <ul>
-                                        <li>
-                                            A design patent that proposes the use of Hexagon shaped pipe to efficiently
-                                            and evenly distribute light with minimal
-                                            energy usage
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="spacer-sub-margin"></div>
-
-                            <div class="project-card">
-                                <div class="project-card-row">
-                                    <div class="project-card-name">
-                                        <a>Honey I Shrunk the Images - Python Edition <span
-                                                class="title-banner">Experimental</span> <a
-                                                class="hyperlinks-white no-underline"
-                                                href="//github.com/navhits/honey-i-shrunk-the-images-py"><span
-                                                    class="title-banner-grey">Github Repo</span></a></a>
-                                    </div>
-                                </div>
-                                <div class="project-card-row">
-                                    <ul>
-                                        <li>
-                                            An experiment to shrink python based Docker images to the smallest possible
-                                            size by using Docker scratch image
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="spacer-sub-margin"></div>
-
-                            <div class="project-card">
-                                <div class="project-card-row">
-                                    <div class="project-card-name">
-                                        <a>Events on Campus <span class="title-banner">Hackathon</span> <a
-                                                class="hyperlinks-white no-underline"
-                                                href="//github.com/navhits/EventsOnCampus"><span
-                                                    class="title-banner-grey">Github Repo</span></a></a>
-                                    </div>
-                                </div>
-                                <div class="project-card-row">
-                                    <ul>
-                                        <li>
-                                            An experiment to shrink python based Docker images to the smallest possible
-                                            size by using Docker scratch image
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="spacer-margin"></div>
-
-                    <div class="skills">
-                        <div class="skills-title">
-                            Skills & Competencies
-                        </div>
-                        <div class="skill-cards-section">
-                            <span class="skill-card-blue">
-                                Cybersecurity
-                            </span>
-                            <span class="skill-card-blue">
-                                DevSecOps
-                            </span>
-                            <span class="skill-card-blue">
-                                Python
-                            </span>
-                            <span class="skill-card-blue">
-                                Docker
-                            </span>
-                            <br />
-                            <span class="skill-card-grey">
-                                Public Speaking
-                            </span>
-                            <span class="skill-card-grey">
-                                Problem Solving
-                            </span>
-                            <br />
-                            <span class="skill-card-grey">
-                                Community Development
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="spacer-margin"></div>
-
-                    <div class="languages">
-                        <div class="languages-title">
-                            Languages
-                        </div>
-                        <div class="language-items">
-                            <div class="project-card">
-                                <div class="language-card-row">
-                                    <div class="language-card-name">
-                                        <a>English <span
-                                                class="title-banner">Full-working proficiency</span></a>
-                                    </div>
-                                    <div class="language-card-name">
-                                        <a>Tamil <span class="title-banner">Native/Bilingual proficiency</span></a>
-                                    </div>
-                                    <div class="language-card-name">
-                                        <a>Malayalam <span class="title-banner">Native/Bilingual proficiency</span></a>
-                                    </div>
-                                    <div class="language-card-name">
-                                        <a>Hindi <span class="title-banner">Limited working proficiency</span></a>
-                                    </div>
-                                    <div class="language-card-name">
-                                        <a>French <span class="title-banner-grey">Elementary proficiency</span></a>
-                                    </div>
-                                    <div class="language-card-name">
-                                        <a>Hebrew <span class="title-banner-grey">Elementary proficiency</span></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            </div>
         </div>
-    <div class="footer"></div>
-    </div>
-    
-    <script>
-        function generatePDF() {
-            let noPrint = document.getElementById("noPrint");
-            let printArea = document.getElementById("printArea");
-            noPrint.remove();
-            window.print();
-            printArea.insertBefore(noPrint, printArea.children[0]);
+    </section>
+    <section class="footer">
+        <p>
+            <script>document.write(new Date().getFullYear())</script>. Hand baked 🍪 with ❤️ by Naveen S
+        </p>
+    </section>
+    <script async src="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script async src="//navs.page/static/js/type.js"></script>
+    <script defer src="//navs.page/js/main.js"></script>
+    <script src="//navs.page/themes/neodyn/js/neodyn.js"></script>
+    <script defer>
+        var options = {
+            light: "//navs.page/themes/neodyn/css/variants/neodyn-light.css",
+            dark: "//navs.page/themes/neodyn/css/variants/neodyn-dark.css"
+        };
+        var DarkMode = new DarkMode(options);
+        var ModeToggler = document.getElementById('mode-toggler')
+        var imgElement = document.getElementById('banner');
+        changeTogglerText()
+
+        ModeToggler.onclick = function () {
+            DarkMode.toggleMode()
+            changeTogglerText()
+
         }
+
+        function changeTogglerText() {
+            var currentMode = DarkMode.getMode()
+            console.log(currentMode + " mode enabled")
+            ModeToggler.textContent = currentMode === 'light' ? 'Lights off 🌝' : 'Lights on 🌚'
+        }
+
+
     </script>
 
 </body>
