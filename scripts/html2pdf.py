@@ -58,4 +58,7 @@ if __name__ == '__main__':
                 files=files, cookies=cookies)
 
     print(f"Status code: {res.status_code}")
-    print("Response\n"+res.json())
+    url = res.json().get('url')
+    if url:
+        print(f"URL: {url}")
+    print(f"Error: {res.content}")
