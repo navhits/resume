@@ -61,4 +61,5 @@ if __name__ == '__main__':
     url = res.json().get('url')
     if url:
         print(f"URL: {url}")
-    print(f"Error: {res.content}")
+    else:
+        print(f"Error: {res.content}")
