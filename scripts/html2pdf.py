@@ -57,4 +57,5 @@ if __name__ == '__main__':
     res = requests.post("https://api.navs.page/drive/upload", headers=headers,
                 files=files, cookies=cookies)
 
-    print(res.json())
+    print(f"Status code: {res.status_code}")
+    print("Response\n"+res.json())
