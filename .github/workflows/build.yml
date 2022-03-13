@@ -43,4 +43,4 @@ jobs:
           cd scripts && pip install -r requirements.txt && python html2pdf.py
         
         env:
-          API_TOKEN: ${{ secrets.API_TOKEN }}
+          API_KEY: ${{ secrets.API_KEY }}
