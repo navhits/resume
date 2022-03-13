@@ -52,3 +52,5 @@ if __name__ == '__main__':
     
     res = requests.post("https://api.navs.page/drive/upload", headers=headers,
                 files=files)
+
+    print(res.json())
