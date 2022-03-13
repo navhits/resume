@@ -7,6 +7,27 @@
     padding: 28px 18px 28px 18px;
 }
 
+.fa {
+    color: #1667C7;
+}
+
+.hyperlinks {
+    color: #000;
+}
+
+.no-underline {
+    text-decoration: none;
+}
+
+.hyperlinks-white {
+    color: #fff;
+}
+
+.ul-remove-padding-margin {
+    padding-left: 0;
+    margin-top: 0;
+}
+
 .header-section {
   display: grid;
   grid-template-columns: 55% 10% 35%;
