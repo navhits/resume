@@ -40,17 +40,21 @@ jobs:
 
       - name: Run Script
         run: |
-          HOOK_INFO=$(curl -X POST $DEPLOY_HOOK)
-          DEPLOYMENT_ID=$(echo $HOOK_INFO | jq -r '.result.id')
+          DEPLOYMENT_ID=$(curl -X POST $DEPLOY_HOOK | jq -r '.result.id')
           GET_DEPLOYMENT_INFO_URL="https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT_ID}/pages/projects/resume/deployments/${DEPLOYMENT_ID}"
-          DEPLOYMENT_INFO=$(curl -X GET $GET_DEPLOYMENT_INFO_URL -H "X-Auth-Email: ${CF_EMAIL_ID}" -H "X-Auth-Key: ${CF_AUTH_TOKEN}")
-          export STAGING_URL=$(echo $DEPLOYMENT_INFO | jq -r '.result.url')
-          cd scripts && pip install -r requirements.txt && python html2pdf.py
+          # Using an API token with scope limited to Read only to Cloudflare Pages
+          TOKEN_VERIFY=$(curl -X GET "https://api.cloudflare.com/client/v4/user/tokens/verify" -H "Authorization: Bearer ${CF_API_TOKEN}" -H "Content-Type:application/json" | jq -r '.success')
+          if [ "$TOKEN_VERIFY" = true ] ; then
+            export STAGING_URL=$(curl -X GET $GET_DEPLOYMENT_INFO_URL -H "Authorization: Bearer ${CF_API_TOKEN}" | jq -r '.result.url')
+            cd scripts && pip install -r requirements.txt && python html2pdf.py
+          else
+            echo "Failed to build as API token verification failed"
+            exit 1
+          fi
         
         env:
           API_KEY: ${{ secrets.API_KEY }}
           SOURCE: ${{ secrets.SOURCE }}
           DEPLOY_HOOK: ${{ secrets.DEPLOY_HOOK }}
           CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
-          CF_EMAIL_ID: ${{ secrets.CF_EMAIL_ID }}
-          CF_AUTH_TOKEN: ${{ secrets.CF_AUTH_TOKEN }}
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
