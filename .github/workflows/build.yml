@@ -7,20 +7,8 @@ on:
       - main
   
 jobs:
-  deploy-to-staging:
-    name: Deploy to staging
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Webhook trigger
-        run: |
-          curl --location --request POST $DEPLOY_HOOK
-        
-        env:
-          DEPLOY_HOOK: ${{ secrets.DEPLOY_HOOK }}
-
-  build-resume:
-    name: Build resume
+  page-resume-build:
+    name: Page & Resume builder
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -52,9 +40,17 @@ jobs:
 
       - name: Run Script
         run: |
+          HOOK_INFO=$(curl -X POST $DEPLOY_HOOK)
+          DEPLOYMENT_ID=$(echo $HOOK_INFO | jq -r '.result.id')
+          GET_DEPLOYMENT_INFO_URL="https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT_ID}/pages/projects/resume/deployments/${DEPLOYMENT_ID}"
+          DEPLOYMENT_INFO=$(curl -X GET $GET_DEPLOYMENT_INFO_URL -H "X-Auth-Email: ${CF_EMAIL_ID}" -H "X-Auth-Key: ${CF_AUTH_TOKEN}")
+          export STAGING_URL=$(echo $DEPLOYMENT_INFO | jq -r '.result.url')
           cd scripts && pip install -r requirements.txt && python html2pdf.py
         
         env:
           API_KEY: ${{ secrets.API_KEY }}
           SOURCE: ${{ secrets.SOURCE }}
-          STAGING_DOMAIN: ${{ secrets.STAGING_DOMAIN }}
+          DEPLOY_HOOK: ${{ secrets.DEPLOY_HOOK }}
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+          CF_EMAIL_ID: ${{ secrets.CF_EMAIL_ID }}
+          CF_AUTH_TOKEN: ${{ secrets.CF_AUTH_TOKEN }}
