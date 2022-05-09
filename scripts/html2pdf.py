@@ -40,9 +40,9 @@ class Html2Pdf:
         return file_name
 
 if __name__ == '__main__':
-    file_name = Html2Pdf(url="https://resume.navs.page/resume").convert()
+    file_name = Html2Pdf(url=f"https://{os.getenv('STAGING_DOMAIN')}/resume").convert()
 
-        
+
     headers = {
         'x-api-key': os.getenv('API_KEY'),
         'accept': 'application/json',
