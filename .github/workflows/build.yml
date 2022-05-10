@@ -45,10 +45,19 @@ jobs:
           # Using an API token with scope limited to Read only to Cloudflare Pages
           TOKEN_VERIFY=$(curl -X GET "https://api.cloudflare.com/client/v4/user/tokens/verify" -H "Authorization: Bearer ${CF_API_TOKEN}" -H "Content-Type:application/json" | jq -r '.success')
           if [ "$TOKEN_VERIFY" = true ] ; then
-            export STAGING_URL=$(curl -X GET $GET_DEPLOYMENT_INFO_URL -H "Authorization: Bearer ${CF_API_TOKEN}" | jq -r '.result.url')
+            export DEPLOYMENT_URL=$(curl -X GET $GET_DEPLOYMENT_INFO_URL -H "Authorization: Bearer ${CF_API_TOKEN}" | jq -r '.result.url')
             cd scripts && pip install -r requirements.txt && python html2pdf.py
+            echo "## Deployment successful :rocket:" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "View current deployment at [${DEPLOYMENT_URL}](${DEPLOYMENT_URL})" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+
           else
-            echo "Failed to build as API token verification failed"
+            echo "## Deployment failed :broken_heart:" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "Failed to build page as API token verification failed." >> $GITHUB_STEP_SUMMARY
+            echo "Please check your Cloudflare API token and run this job." >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
             exit 1
           fi
         
