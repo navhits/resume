@@ -67,3 +67,5 @@ jobs:
           DEPLOY_HOOK: ${{ secrets.DEPLOY_HOOK }}
           CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
           CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CF_ACCESS_CLIENT_ID: ${{ secrets.CF_ACCESS_CLIENT_ID }}
+          
