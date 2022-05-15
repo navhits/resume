@@ -6,8 +6,8 @@ from seleniumwire import webdriver
 
 
 def interceptor(request):
-        request.headers['CF-Access-Client-Id'] = os.getenv('CF_ACCESS_CLIENT_ID')
-        request.headers['CF-Access-Client-Secret'] = os.getenv('CF_ACCESS_CLIENT_SECRET')
+    request.headers['CF-Access-Client-Id'] = os.getenv('CF_ACCESS_CLIENT_ID')
+    request.headers['CF-Access-Client-Secret'] = os.getenv('CF_ACCESS_CLIENT_SECRET')
 
 class Html2Pdf:
     options = webdriver.ChromeOptions()
