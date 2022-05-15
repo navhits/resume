@@ -2,13 +2,19 @@ from http import cookies
 import os
 from base64 import b64decode
 import requests
-from selenium import webdriver
+from seleniumwire import webdriver
 
+
+def interceptor(request):
+        request.headers['CF-Access-Client-Id'] = os.getenv('CF_ACCESS_CLIENT_ID')
+        request.headers['CF-Access-Client-Secret'] = os.getenv('CF_ACCESS_CLIENT_SECRET')
 
 class Html2Pdf:
     options = webdriver.ChromeOptions()
     options.add_argument("--headless")
     driver = webdriver.Chrome(options=options)
+    driver.request_interceptor = interceptor
+    
     def __init__(self, url: str) -> None:
         self.url = url
 
