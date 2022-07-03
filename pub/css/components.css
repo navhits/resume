@@ -89,7 +89,7 @@
     grid-template-rows: auto;
 }
 
-.work-title, .education-title, .volunteer-title, .project-title, .skills-title, .languages-title {
+.work-title, .education-title, .volunteer-title, .project-title, .skills-title, .languages-title, .patent-title, .publication-title {
     font-size: 30px;
     font-weight: 400;
     color: #1666c7;
@@ -117,7 +117,7 @@
     font-weight: 400;
 }
 
-.project-card-name {
+.project-card-name, .patent-card-name, .publication-card-name {
     font-size: 15px;
     width: 80%;
     color: #000;
@@ -188,7 +188,7 @@
     text-align: right;
 }
 
-.work-card-row, .education-card-row, .volunteer-card-row, .project-card-row {
+.work-card-row, .education-card-row, .volunteer-card-row, .project-card-row, .patent-card-row, .publication-card-row {
     font-size: 9px;
     font-weight: 300;
     color: #737373;
