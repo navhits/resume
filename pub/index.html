@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Naveen's Resume</title>
     <meta charset="utf-8">
+    <link rel="icon" type="image/x-icon" href="//navs.page/static/images/favicon-light.png" id="faviconTag">
     <meta property="og:title" content="Naveen's Resume">
     <meta name="description"
         content="Naveen is a developer by heart and infosec by passion. Security Engineer @ Freshworks and volunteers for GDG and WTM Chennai.">
@@ -56,15 +57,14 @@
                     </div>
                 </div>
                 <div class="frame-view">
-                    <iframe class="frame" src="resume.html"></iframe>
+                    <iframe class="frame" src="resume"></iframe>
                 </div>
             </div>
         </div>
     </section>
     <section class="footer">
-        <p>
-            <script>document.write(new Date().getFullYear())</script>. Hand baked 🍪 with ❤️ by Naveen S
-        </p>
+        <p style="padding: 0 0 20px 0"><a href="/privacy" rel="noopener noreferrer" target="_blank">Privacy Policy</a></p>
+        <p class="footer-text" id="footer-text"></p>
     </section>
     <script async src="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script async src="//navs.page/static/js/type.js"></script>
@@ -89,9 +89,14 @@
         function changeTogglerText() {
             var currentMode = DarkMode.getMode()
             console.log(currentMode + " mode enabled")
+            const faviconTag = document.getElementById("faviconTag");
+            faviconTag.href = currentMode === 'light' ? 'static/images/favicon-light.png' : '/static/images/favicon-dark.png'
             ModeToggler.textContent = currentMode === 'light' ? 'Lights off 🌝' : 'Lights on 🌚'
         }
 
+        var footer_text = document.getElementById("footer-text")
+        var year = new Date().getFullYear()
+        footer_text.innerText = year + ". Hand baked with ❤️ by Naveen S"
 
     </script>
 
