@@ -1,4 +1,3 @@
-from http import cookies
 import os
 from base64 import b64decode
 import requests
