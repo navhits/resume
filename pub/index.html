@@ -90,7 +90,7 @@
             var currentMode = DarkMode.getMode()
             console.log(currentMode + " mode enabled")
             const faviconTag = document.getElementById("faviconTag");
-            faviconTag.href = currentMode === 'light' ? 'static/images/favicon-light.png' : '/static/images/favicon-dark.png'
+            faviconTag.href = currentMode === 'light' ? '//navs.page/static/images/favicon-light.png' : '//navs.page/static/images/favicon-dark.png'
             ModeToggler.textContent = currentMode === 'light' ? 'Lights off 🌝' : 'Lights on 🌚'
         }
 
