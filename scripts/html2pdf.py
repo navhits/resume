@@ -1,3 +1,4 @@
+# This is not in use anymore but I still keep this here for reference
 import os
 from base64 import b64decode
 import requests

@@ -11,32 +11,32 @@ jobs:
     name: Page & Resume builder
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.9'
-      - name: Setup Pip
-        run: |
-          python -m pip install --upgrade pip
+      - uses: actions/checkout@v4
+      # - name: Set up Python
+      #   uses: actions/setup-python@v2
+      #   with:
+      #     python-version: '3.9'
+      # - name: Setup Pip
+      #   run: |
+      #     python -m pip install --upgrade pip
         
-      - name: Install Chrome
-        run: |
-          wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-          echo "deb http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee -a /etc/apt/sources.list.d/google-chrome.list
-          sudo apt-get update -qqy
-          sudo apt-get -qqy install google-chrome-stable
-          CHROME_VERSION=$(google-chrome-stable --version)
-          CHROME_FULL_VERSION=${CHROME_VERSION%%.*}
-          CHROME_MAJOR_VERSION=${CHROME_FULL_VERSION//[!0-9]}
-          sudo rm /etc/apt/sources.list.d/google-chrome.list
-          export CHROMEDRIVER_VERSION=`curl -s https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROME_MAJOR_VERSION%%.*}`
-          curl -L -O "https://chromedriver.storage.googleapis.com/${CHROMEDRIVER_VERSION}/chromedriver_linux64.zip"
-          unzip chromedriver_linux64.zip && chmod +x chromedriver && sudo mv chromedriver /usr/local/bin
-          export CHROMEDRIVER_VERSION=`curl -s https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROME_MAJOR_VERSION%%.*}`
-          curl -L -O "https://chromedriver.storage.googleapis.com/${CHROMEDRIVER_VERSION}/chromedriver_linux64.zip"
-          unzip chromedriver_linux64.zip && chmod +x chromedriver && sudo mv chromedriver /usr/local/bin
-          chromedriver --version
+      # - name: Install Chrome
+      #   run: |
+      #     wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+      #     echo "deb http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee -a /etc/apt/sources.list.d/google-chrome.list
+      #     sudo apt-get update -qqy
+      #     sudo apt-get -qqy install google-chrome-stable
+      #     CHROME_VERSION=$(google-chrome-stable --version)
+      #     CHROME_FULL_VERSION=${CHROME_VERSION%%.*}
+      #     CHROME_MAJOR_VERSION=${CHROME_FULL_VERSION//[!0-9]}
+      #     sudo rm /etc/apt/sources.list.d/google-chrome.list
+      #     export CHROMEDRIVER_VERSION=`curl -s https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROME_MAJOR_VERSION%%.*}`
+      #     curl -L -O "https://chromedriver.storage.googleapis.com/${CHROMEDRIVER_VERSION}/chromedriver_linux64.zip"
+      #     unzip chromedriver_linux64.zip && chmod +x chromedriver && sudo mv chromedriver /usr/local/bin
+      #     export CHROMEDRIVER_VERSION=`curl -s https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROME_MAJOR_VERSION%%.*}`
+      #     curl -L -O "https://chromedriver.storage.googleapis.com/${CHROMEDRIVER_VERSION}/chromedriver_linux64.zip"
+      #     unzip chromedriver_linux64.zip && chmod +x chromedriver && sudo mv chromedriver /usr/local/bin
+      #     chromedriver --version
 
       - name: Run Script
         run: |
@@ -48,7 +48,7 @@ jobs:
             export DEPLOYMENT_URL=$(curl -X GET $GET_DEPLOYMENT_INFO_URL -H "Authorization: Bearer ${CF_API_TOKEN}" | jq -r '.result.url')
             echo "Deployed: ${DEPLOYMENT_URL}"
             sleep 5
-            cd scripts && pip install -r requirements.txt && python html2pdf.py
+            # cd scripts && pip install -r requirements.txt && python html2pdf.py
             echo "## Deployment successful :rocket:" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
             echo "View current deployment at [${DEPLOYMENT_URL}](${DEPLOYMENT_URL})" >> $GITHUB_STEP_SUMMARY
