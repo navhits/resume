@@ -5,6 +5,10 @@ on:
   push:
     branches:
       - main
+    paths-ignore:
+      - 'README.md'
+      - 'scripts/*'
+      - '.github/workflows/build.yml'
   
 jobs:
   page-resume-build:
@@ -47,8 +51,11 @@ jobs:
           if [ "$TOKEN_VERIFY" = true ] ; then
             export DEPLOYMENT_URL=$(curl -X GET $GET_DEPLOYMENT_INFO_URL -H "Authorization: Bearer ${CF_API_TOKEN}" | jq -r '.result.url')
             echo "Deployed: ${DEPLOYMENT_URL}"
-            sleep 5
+            
+            # We are not using this script to generate PDFs
+            # sleep 5
             # cd scripts && pip install -r requirements.txt && python html2pdf.py
+            
             echo "## Deployment successful :rocket:" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
             echo "View current deployment at [${DEPLOYMENT_URL}](${DEPLOYMENT_URL})" >> $GITHUB_STEP_SUMMARY
