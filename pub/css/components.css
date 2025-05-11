@@ -89,7 +89,15 @@
     grid-template-rows: auto;
 }
 
-.work-title, .education-title, .volunteer-title, .project-title, .skills-title, .languages-title, .patent-title, .publication-title {
+.work-title,
+.education-title,
+.volunteer-title,
+.project-title,
+.skills-title,
+.languages-title,
+.patent-title,
+.publication-title,
+.talks-title {
     font-size: 30px;
     font-weight: 400;
     color: #1666c7;
@@ -101,7 +109,7 @@
     grid-template-rows: auto;
 }
 
-.work-card-role, .education-card-role, .volunteer-card-role {
+.work-card-role, .education-card-role, .volunteer-card-role, .talk-card-name {
     font-size: 15px;
     font-weight: 300;
     font-style: italic;
@@ -112,7 +120,7 @@
 }
 
 
-.work-card-org, .education-card-org, .volunteer-card-org {
+.work-card-org, .education-card-org, .volunteer-card-org, .talk-card-location {
     font-size: 15px;
     font-weight: 400;
 }
@@ -188,7 +196,7 @@
     text-align: right;
 }
 
-.work-card-row, .education-card-row, .volunteer-card-row, .project-card-row, .patent-card-row, .publication-card-row {
+.work-card-row, .education-card-row, .volunteer-card-row, .project-card-row, .patent-card-row, .publication-card-row, .talk-card-row {
     font-size: 9px;
     font-weight: 300;
     color: #737373;

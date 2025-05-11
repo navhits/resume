@@ -9,6 +9,15 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const links = document.querySelectorAll('a[href]');
+            links.forEach(link => {
+                link.setAttribute('target', '_blank');
+                link.setAttribute('rel', 'noopener noreferrer');
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -25,7 +34,7 @@
                     <div class="about">
                         An energetic technology enthusiast who is a developer from heart and passionate about
                         Information Security. Interesting
-                        and challenging problems never fails to excite me. I believe in usability and accessability of
+                        and challenging problems never fails to excite me. I believe in usability and accessibility of
                         security and privacy for
                         everyone through the technology they use.
                     </div>
@@ -59,14 +68,6 @@
                                 <i class="fa fa-map-marker" aria-hidden="true"></i>
                             </div>
                         </div>
-                        <div class="contact-item">
-                            <div class="contact-item-text">
-                                <a>August 2, 1998</a>
-                            </div>
-                            <div class="contact-item-icon">
-                                <i class="fa fa-calendar" aria-hidden="true"></i>
-                            </div>
-                        </div>
                     </div>
                     <div class="social">
                         <div class="social-item">
@@ -75,14 +76,6 @@
                             </div>
                             <div class="social-item-text">
                                 <a class="hyperlinks" href="//navs.page">https://navs.page</a>
-                            </div>
-                        </div>
-                        <div class="social-item">
-                            <div class="social-item-icon">
-                                <i class="fa fa-twitter" aria-hidden="true"></i>
-                            </div>
-                            <div class="social-item-text">
-                                <a class="hyperlinks" href="//twitter.com/nav_s15">@navs_s15</a>
                             </div>
                         </div>
                         <div class="social-item">
@@ -99,14 +92,6 @@
                             </div>
                             <div class="social-item-text">
                                 <a class="hyperlinks" href="//linkedin.com/in/naveen-s">in/naveen-s</a>
-                            </div>
-                        </div>
-                        <div class="social-item">
-                            <div class="social-item-icon">
-                                <i class="fa fa-medium" aria-hidden="true"></i>
-                            </div>
-                            <div class="social-item-text">
-                                <a class="hyperlinks" href="//naveen-s.medium.com">@naveen-s</a>
                             </div>
                         </div>
                     </div>
@@ -435,57 +420,106 @@
 
                     <div class="spacer-margin"></div>
 
+                    <div class="talks">
+                        <div class="talks-title">
+                            Talks
+                        </div>
+                        <div class="talk-items">
+                            <div class="talk-card">
+                                <div class="talk-card-row">
+                                    <div class="talk-card-name">
+                                        <a>Building git hooks for your organization</a>
+                                    </div>
+                                    <div class="talk-card-location">
+                                        <a>OWASP AppSec Days India 2024</a>
+                                    </div>
+                                    <div class="talk-card-row">
+                                        <ul>
+                                            <a class="hyperlinks-white no-underline" href="//assets.navs.page/presentations/2024/OWASP_AppSec_Days_India_2024.pdf">
+                                                <span class="title-banner">Presentation</span>
+                                            </a>
+                                            <a class="hyperlinks-white no-underline" href="//youtube.com/watch?v=W8O4xg42yoo"></a>
+                                                <span class="title-banner-grey">YouTube</span>
+                                            </a>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="spacer-sub-margin"></div>
+
+                            <div class="talk-card">
+                                <div class="talk-card-row">
+                                    <div class="talk-card-name">
+                                        <a>Scratch containers and the supply chain trouble</a>
+                                    </div>
+                                    <div class="talk-card-location">
+                                        <a>OWASP Global AppSec Singapore 2023</a>
+                                    </div>
+                                    <div class="talk-card-row">
+                                        <ul>
+                                            <a class="hyperlinks-white no-underline" href="//assets.navs.page/presentations/2023/OWASP_Global_AppSec_Singapore_2023.pdf">
+                                                <span class="title-banner">Presentation</span>
+                                            </a>
+                                            <a class="hyperlinks-white no-underline" href="//youtube.com/watch?v=-vWe_XheGlw"></a>
+                                                <span class="title-banner-grey">YouTube</span>
+                                            </a>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="spacer-sub-margin"></div>
+                            
+                            <div class="talk-card">
+                                <div class="talk-card-row">
+                                    <div class="talk-card-name">
+                                        <a>Simplifying Code security for Developers</a>
+                                    </div>
+                                    <div class="talk-card-location">
+                                        <a>DevFest Coimbatore 2022</a>
+                                    </div>
+                                    <div class="talk-card-row">
+                                        <ul>
+                                            <a class="hyperlinks-white no-underline" href="//assets.navs.page/presentations/2022/GDG_DevFest_Coimbatore_2022.pdf">
+                                                <span class="title-banner">Presentation</span>
+                                            </a>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="spacer-margin"></div>
+
                     <div class="publications">
                         <div class="publication-title">
                             Publications
                         </div>
                         <div class="publication-items">
                             <div class="publication-card">
-                                    <div class="publication-card-row">
-                                        <div class="publication-card-name">
-                                            <a>Deep Learning for Threat Actor Attribution from Threat Reports <span
-                                                    class="title-banner">Published</span> <br /><a 
-                                                    class="hyperlinks-white no-underline" 
-                                                    href="//doi.org/10.1109/ICCCSP49186.2020.9315219"><span
-                                                    class="title-banner-grey">DOI
-                                                    10.1109/ICCCSP49186.2020.9315219</span></a>
-                                        </div>
-                                    </div>
-                                    <div class="publication-card-row">
-                                        <ul>
-                                            <li>
-                                                A multi-class threat attribution neural network based on threat intelligence
-                                                reports
-                                            </li>
-                                            <li>
-                                                Uses Similarity based Vector Representation (SimVeR) embeddings for text classification
-                                            </li>
-                                        </ul>
+                                <div class="publication-card-row">
+                                    <div class="publication-card-name">
+                                        <a>Deep Learning for Threat Actor Attribution from Threat Reports <span
+                                                class="title-banner">Published</span> <br /><a 
+                                                class="hyperlinks-white no-underline" 
+                                                href="//doi.org/10.1109/ICCCSP49186.2020.9315219"><span
+                                                class="title-banner-grey">DOI
+                                                10.1109/ICCCSP49186.2020.9315219</span></a>
                                     </div>
                                 </div>
-                            </div>
-                    </div>
-                    
-                    <div class="spacer-margin"></div>
-
-                    <div class="patents">
-                        <div class="patent-title">
-                            Patents
-                        </div>
-                        <div class="patent-card">
-                            <div class="patent-card-row">
-                                <div class="patent-card-name">
-                                    <a>Hexagon Structured Optic Mirror Pipe for Street Lights <span class="title-banner">Patent Applied</span>
-                                        <span class="title-banner-grey">201841015766</span></a>
+                                <div class="publication-card-row">
+                                    <ul>
+                                        <li>
+                                            A multi-class threat attribution neural network based on threat intelligence
+                                            reports
+                                        </li>
+                                        <li>
+                                            Uses Similarity based Vector Representation (SimVeR) embeddings for text classification
+                                        </li>
+                                    </ul>
                                 </div>
-                            </div>
-                            <div class="patent-card-row">
-                                <ul>
-                                    <li>
-                                        A design patent that proposes the use of Hexagon shaped pipe with internal reflection capabilities
-                                        to efficiently and evenly distribute light with minimal energy usage
-                                    </li>
-                                </ul>
                             </div>
                         </div>
                     </div>
